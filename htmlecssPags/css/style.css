@@ -1,7 +1,4 @@
-body {
-    background-color: #000000;
-  }
-  
-h1 {
-    color: azure;
+.dark-background {
+  background-color: #333;
+  color: #fff;
 }

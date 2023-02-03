@@ -1,52 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-    <!-- Arquivo separado CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    
-    <title>Piratex</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Piratex</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Piratex</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#possibilidades">Possibilidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#musicas">Musicas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contato">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container" id="#home">
+      <div class="row">
+        <div class="col-md-6 col-12 text-center">
+          <br>
+          <h2>Bem vindo!</h2>
+            <br>
+          <p>- Download de musicas</p>
+          <br>
+          <p>- Faça Upload delas</p>
+          <br>
+       
+            <button type="button" class="btn btn-success text-center">Tutorial</button>
         </div>
-      </nav>
+        <div class="col-md-6 col-12">
+          <img src="Imagens/Piratex.png" class="img-fluid">
+        </div>
+      </div>
     </div>
-    <div class="container mt-5">
-      <h1 class="text-center">Welcome to Piratex</h1>
+    <div class="container">
+      <h1 class="text-center my-5">Conteúdo com Imagens e Vídeos</h1>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <img src="Imagens/fones.png" class="img-fluid" alt="Imagem">
+          <p class="my-3">Upload e Download de Musicas</p>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <img src="Imagens/free-youtube-logo-icon-2431-thumb.png" class="img-fluid" alt="Imagem">
+          <p class="my-3">Pegue suas musicas do YouTube</p>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <img src="Imagens/github.png" class="img-fluid" alt="Imagem">
+          <p class="my-3">Visite nosso repositorio</p>
+        </div>
+      </div>
+      <div class="container" id="#possibilidades">
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <p>Piratex é um site incrível de música que oferece uma vasta seleção de músicas de todos os gêneros. 
+              Se você é fã de rock, pop, hip hop, jazz ou qualquer outro estilo musical, você encontrará tudo o que 
+              precisa na Piratex. Além disso, o site possui uma interface fácil de usar e uma enorme coleção de músicas 
+              para você escolher. Você pode baixar músicas com alta qualidade e sem limitações, o que significa que você 
+              pode curtir suas músicas favoritas sem interrupções. Além disso, a Piratex oferece uma plataforma segura e 
+              confiável para baixar músicas, então você não precisa se preocupar com vírus ou outros problemas. Se você quer 
+              ter acesso a uma vasta coleção de músicas, basta visitar o site Piratex hoje mesmo!</p>
+              <br>
+              <button type="button" class="btn btn-success text-center">Mais</button>
+          </div>
+          <div class="col-md-6 col-12">
+            <img src="Imagens/dudebp.png" class="img-fluid">
+          </div>
+        </div>
+      </div>
+      <div class="container" id="#musicas">
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <img src="Imagens/Toruguim_A_full_body_woman_with_headphones_muscles_music_traini_f1531aff-75fc-40a4-8801-a0dcfa1da663.png" class="img-fluid">
+          </div>
+          <div class="col-md-6 col-12 text-center">
+            <p>Piratex é um site incrível de música que oferece uma vasta seleção de músicas de todos os gêneros. 
+              Se você é fã de rock, pop, hip hop, jazz ou qualquer outro estilo musical, você encontrará tudo o que 
+              precisa na Piratex. Além disso, o site possui uma interface fácil de usar e uma enorme coleção de músicas 
+              para você escolher. Você pode baixar músicas com alta qualidade e sem limitações, o que significa que você 
+              pode curtir suas músicas favoritas sem interrupções. Além disso, a Piratex oferece uma plataforma segura e 
+              confiável para baixar músicas, então você não precisa se preocupar com vírus ou outros problemas. Se você quer 
+              ter acesso a uma vasta coleção de músicas, basta visitar o site Piratex hoje mesmo!</p>
+              <br>
+              <button type="button" class="btn btn-success">Download</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row my-5">
+        <div class="col-12">
+          <h2 class="text-center">Apresentação</h2>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0XIqH9DfpIc&list=RDKnFmipbJGX8&index=2&ab_channel=JosephSolomon" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
     </div>
-
-<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <div class="container my-5 " id="contato">
+      <h2>Contato</h2>
+      <p>Conteúdo da página Contato</p>
+    </div>
   </body>
 </html>
-

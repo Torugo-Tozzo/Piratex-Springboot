@@ -9,14 +9,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @SpringBootApplication
 public class RelationalDataAccessApplication implements CommandLineRunner {
-
 	private static final Logger log = LoggerFactory.getLogger(RelationalDataAccessApplication.class);
-
 	public static void main(String args[]) {
 		SpringApplication.run(RelationalDataAccessApplication.class, args);
 	}
@@ -31,23 +30,25 @@ public class RelationalDataAccessApplication implements CommandLineRunner {
 
 		jdbcTemplate.execute("DROP TABLE customers IF EXISTS");
 		jdbcTemplate.execute("CREATE TABLE customers(" +
-				"id SERIAL, first_name VARCHAR(255), last_name VARCHAR(255))");
+				"id SERIAL, first_name VARCHAR(255), last_name VARCHAR(255), favorite_music VARCHAR(255))");
 
 		// Split up the array of whole names into an array of first/last names
-		List<Object[]> splitUpNames = Arrays.asList("John Woo", "Jeff Dean", "Josh Bloch", "Josh Long").stream()
-				.map(name -> name.split(" "))
-				.collect(Collectors.toList());
+		List<Object[]> customerData = Arrays.asList(
+				new Object[]{"John", "Woo", "I Will Always Love You"},
+				new Object[]{"Jeff", "Dean", "Perfect"},
+				new Object[]{"Josh", "Bloch", "Sorry"},
+				new Object[]{"Josh", "Long", "Photograph"}
+		);
 
 		// Use a Java 8 stream to print out each tuple of the list
-		splitUpNames.forEach(name -> log.info(String.format("Inserting customer record for %s %s", name[0], name[1])));
+		customerData.forEach(data -> log.info(String.format("Inserting customer record for  %s %s %s", data[0], data[1], data[2])));
 
-		// Uses JdbcTemplate's batchUpdate operation to bulk load data
-		jdbcTemplate.batchUpdate("INSERT INTO customers(first_name, last_name) VALUES (?,?)", splitUpNames);
+		jdbcTemplate.batchUpdate("INSERT INTO customers(first_name, last_name, favorite_music) VALUES (?,?,?)", customerData);
 
-		log.info("Querying for customer records where first_name = 'Josh':");
+		log.info("Querying for customer records where favorite_music = 'Pop':");
 		jdbcTemplate.query(
-				"SELECT id, first_name, last_name FROM customers WHERE first_name = ?", new Object[] { "Josh" },
-				(rs, rowNum) -> new Customer(rs.getLong("id"), rs.getString("first_name"), rs.getString("last_name"))
+				"SELECT id, first_name, last_name, favorite_music FROM customers WHERE favorite_music = ?", new Object[]{"Pop"},
+				(rs, rowNum) -> new Customer(rs.getLong("id"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("favorite_music"))
 		).forEach(customer -> log.info(customer.toString()));
 	}
 }
